@@ -29,9 +29,9 @@ SMODS.Joker{
         }]]
     },
     atlas = 'Jokers', --atlas' key
-    rarity = 4, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
+    rarity = 1, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
     --soul_pos = { x = 0, y = 0 },
-    cost = 123, --cost
+    cost = 1, --cost
     unlocked = true, --where it is unlocked or not: if true, 
     discovered = true, --whether or not it starts discovered
     blueprint_compat = true, --can it be blueprinted/brainstormed/other
@@ -99,9 +99,9 @@ SMODS.Joker{
         }]]
     },
     atlas = 'jack_of_all_jokers', --atlas' key
-    rarity = 4, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
+    rarity = 1, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
     --soul_pos = { x = 0, y = 0 },
-    cost = 123, --cost
+    cost = 1, --cost
     unlocked = true, --where it is unlocked or not: if true, 
     discovered = true, --whether or not it starts discovered
     blueprint_compat = true, --can it be blueprinted/brainstormed/other
@@ -113,8 +113,28 @@ SMODS.Joker{
         Xmult = 100 --configurable value
       }
     },
-}
+    calculate = function(self,card,context)
+        if context.setting_blind then
+            local current_jokers = #G.jokers.cards
+            local jokers_to_add = 2
+            local jokers = {}
+            if type(G.P_JOKERS) == "table" then
+                for key, joker in pairs(G.P_JOKERS) do
+                    table.insert(jokers, key)
+                end
+            end
+            if  G.jokers.config.card_limit >= current_jokers + 2 then
+                for i = 1, jokers_to_add do
+                    local random_key = jokers[math.random(#jokers)]
+                    local new_card = create_card('Joker', G.jokers, nil,nil,nil,nil,random_key)
+                    new_card:add_to_deck()
+                    G.jokers:emplace(new_card)
+                end
+            end
+    end
 
+end
+}
 
 SMODS.Atlas {
     key = "the_cutter",
@@ -174,3 +194,64 @@ SMODS.Blind {
 
 
 }
+
+
+SMODS.Sound{
+    key = '21',
+    path = '21.ogg'
+}
+
+SMODS.Atlas{
+    key = '21_kid', --atlas key
+    path = '21_kid.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
+    px = 71, --width of one card
+    py = 95 -- height of one card
+}
+
+SMODS.Joker{
+    key = '21_kid', --joker key
+    loc_txt = { -- local text
+        name = 'THE mathematician',
+        text = {
+            '{X:mult,C:white}2.1{} Mult if hand',
+            'contains a 9 and 10'
+        },
+        --[[unlock = {
+            'Be {C:legendary}cool{}',
+        }]]
+    },
+    atlas = '21_kid', --atlas' key
+    rarity = 4, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
+    --soul_pos = { x = 0, y = 0 },
+    cost = 21, --cost
+    unlocked = true, --where it is unlocked or not: if true, 
+    discovered = true, --whether or not it starts discovered
+    blueprint_compat = true, --can it be blueprinted/brainstormed/other
+    eternal_compat = false, --can it be eternal
+    perishable_compat = false, --can it be perishable
+    pos = {x = 0, y = 0}, --position in atlas, starts at 0, scales by the atlas' card size (px and py): {x = 1, y = 0} would mean the sprite is 71 pixels to the right
+    config = { 
+      extra = {
+        xmult = 2.1 --configurable value
+      }
+    },
+calculate = function(self,card,context)
+    if G.hand and G.hand.cards and type(G.hand.cards) == "table" and context.joker_main then
+        local found_9, found_10 = false, false
+        for _, c in ipairs(G.hand.cards) do
+            if c.get_id and c:get_id() == 9 then found_9 = true end
+            if c.get_id and c:get_id() == 10 then found_10 = true end
+        end
+        if found_9 and found_10 then
+            return {
+                card = card,
+                xmult = card.ability.extra.xmult,
+                message = 'X' .. card.ability.extra.xmult,
+                colour = G.C.MULT,
+                sound = play_sound('xmpl_21',0.95 + math.random()*0.1, 0.6)
+            }
+        end
+    end
+end
+}
+

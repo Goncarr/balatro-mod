@@ -1,0 +1,133 @@
+INFO - [♥] Lovely 0.8.0
+INFO - [♥] Game directory is at "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Balatro"
+INFO - [♥] Writing logs to "C:\\Users\\irene\\AppData\\Roaming\\Balatro\\Mods\\lovely\\log"
+INFO - [♥] Using mod directory at "C:\\Users\\irene\\AppData\\Roaming\\Balatro\\Mods"
+WARN - [♥] Unknown key `patches.0.?.match_indent` found in patch file at "C:\\Users\\irene\\AppData\\Roaming\\Balatro\\Mods\\smods-main\\lovely\\scoring_calculation.toml", ignoring it
+INFO - [♥] Cleaning up dumps directory at "C:\\Users\\irene\\AppData\\Roaming\\Balatro\\Mods\\lovely\\dump"
+INFO - [♥] Initialization complete in 92ms
+INFO - [♥] Applied 9 patches to 'main.lua'
+INFO - [♥] Applied 5 patches to 'engine/controller.lua'
+INFO - [♥] Applied 15 patches to 'back.lua'
+INFO - [♥] Applied 8 patches to 'tag.lua'
+INFO - [♥] Applied 2 patches to 'engine/moveable.lua'
+INFO - [♥] Applied 2 patches to 'engine/sprite.lua'
+INFO - [♥] Applied 2 patches to 'engine/animatedsprite.lua'
+INFO - [♥] Applied 78 patches to 'functions/misc_functions.lua'
+INFO - [♥] Applied 48 patches to 'game.lua'
+INFO - [♥] Applied 1 patch to 'globals.lua'
+INFO - [♥] Applied 7 patches to 'engine/ui.lua'
+INFO - [♥] Applied 102 patches to 'functions/UI_definitions.lua'
+INFO - [♥] Applied 55 patches to 'functions/state_events.lua'
+INFO - [♥] Applied 122 patches to 'functions/common_events.lua'
+INFO - [♥] Applied 54 patches to 'functions/button_callbacks.lua'
+WARN - [♥] Regex 'localize\\(\'k_upgrade_ex\'\\)\\}\\); return true\n[ \\t]*end\\}\\)\\)\n[ \\t]*end\n(?<indent>[ \\t]*)return' on target 'card.lua' for regex patch from smods-main\lovely\joker_retriggers.toml resulted in no matches
+WARN - [♥] Regex '[ \\t]*G\\.C\\.MULT\\}\\)\n[ \\t]*return true\n[ \\t]*end\\)\\}\\)\\)\n(?<indent>[ \\t]*)end' on target 'card.lua' for regex patch from smods-main\lovely\joker_retriggers.toml resulted in no matches
+WARN - [♥] Regex '[ \\t]*func = function\\(\\) card_eval_status_text\\(self, \'extra\', nil, nil, nil, \\{message = localize\\{type = \'variable\', key = \'a_xmult\', vars = \\{self\\.ability\\.caino_xmult\\}\\}\\}\\); return true\n(?<indent>[ \\t]*)end\\}\\)\\)' on target 'card.lua' for regex patch from smods-main\lovely\joker_retriggers.toml resulted in no matches
+WARN - [♥] Regex 'glass_cards\\}\\}\\}\\)\n[ \\t]*return true\n[ \\t]*end\n(?<indent>[ \\t]*)\\}\\)\\)' on target 'card.lua' for regex patch from smods-main\lovely\joker_retriggers.toml resulted in no matches
+INFO - [♥] Applied 218 patches to 'card.lua'
+INFO - [♥] Applied 20 patches to 'cardarea.lua'
+INFO - [♥] Applied 40 patches to 'blind.lua'
+INFO - [♥] Applied 10 patches to 'card_character.lua'
+INFO - [♥] Applied 10 patches to 'engine/text.lua'
+INFO - [G] Failed to connect to the debug server
+INFO - [G] 2025-09-13 14:34:36 :: DEBUG :: DebugConsole :: Steamodded Debug Socket started !
+INFO - [G] 2025-09-13 14:34:36 :: INFO  :: SMODS :: Steamodded v1.0.0~BETA-0906c
+INFO - [♥] Applied 9 patches to 'engine/sound_manager.lua'
+INFO - [♥] Applied 1 patch to 'engine/save_manager.lua'
+INFO - [G] 2025-09-13 14:34:38 :: ERROR :: Loader :: Found invalid metadata JSON file at C:\Users\irene\AppData\Roaming\Balatro\Mods/.vscode/settings.json, ignoring: [SMODS _ "src/loader.lua"]:226: id
+INFO - [G] 2025-09-13 14:34:38 :: TRACE :: Loader :: Processing Mod file (Legacy header): Main.lua
+INFO - [G] 2025-09-13 14:34:38 :: TRACE :: Loader :: Saving Mod Info: SimpleJoker
+INFO - [G] 2025-09-13 14:34:38 :: INFO  :: TIMER :: [0000] Injected Fonts in 0.002 ms
+INFO - [G] 2025-09-13 14:34:38 :: INFO  :: TIMER :: [0000] Injected DynaTextEffects in 0.003 ms
+INFO - [G] 2025-09-13 14:34:38 :: INFO  :: TIMER :: [0000] Injected Language in 0.002 ms
+INFO - [G] 2025-09-13 14:34:38 :: INFO  :: TIMER :: [0000] Injected [INTERNAL] in 2.061 ms
+INFO - [G] 2025-09-13 14:34:39 :: INFO  :: TIMER :: [0006] Injected Atlas in 677.690 ms
+INFO - [G] 2025-09-13 14:34:39 :: INFO  :: TIMER :: [0001] Injected Sound in 0.603 ms
+INFO - [G] 2025-09-13 14:34:39 :: INFO  :: TIMER :: [0008] Injected Stake in 0.595 ms
+INFO - [G] 2025-09-13 14:34:39 :: INFO  :: TIMER :: [0004] Injected Rarity in 0.045 ms
+INFO - [G] 2025-09-13 14:34:39 :: INFO  :: TIMER :: [0004] Injected ObjectType in 0.075 ms
+INFO - [G] line not found
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] 2025-09-13 14:34:39 :: ERROR :: StackTrace :: Oops! The game crashed
+[SMODS _ "src/utils.lua"]:228: Attempted to insert object "j_xmpl_Jack_of_all_jokers" into an empty pool.
+Stack Traceback
+===============
+(1) Lua local 'handler' at file 'main.lua:612'
+	Local variables:
+	 msg = string: "[SMODS _ \"src/utils.lua\"]:228: Attempted to insert object \"j_xmpl_Jack_of_all_jokers\" into an empty pool."
+	 (*temporary) = Lua function '?' (defined at line 31 of chunk [SMODS _ "src/logging.lua"])
+	 (*temporary) = string: "Oops! The game crashed\
+"
+(2) LÖVE function at file 'boot.lua:352' (best guess)
+	Local variables:
+	 errhand = Lua function '?' (defined at line 598 of chunk main.lua)
+	 handler = Lua function '?' (defined at line 598 of chunk main.lua)
+(3) global C function 'assert'
+(4) Lua field 'insert_pool' at Steamodded file 'src/utils.lua:228' 
+	Local variables:
+	 pool = nil
+	 center = table: 0x1dcdab78  {_saved_d_u:true, original_key:Jack_of_all_jokers, mod:table: 0x1d596580, unlocked:true, registered:true, rarity:0, cost:1, eternal_compat:false (more...)}
+	 replace = nil
+(5) Lua method 'inject' at Steamodded file 'src/game_object.lua:1216' 
+	Local variables:
+	 self = table: 0x1dcdab78  {_saved_d_u:true, original_key:Jack_of_all_jokers, mod:table: 0x1d596580, unlocked:true, registered:true, rarity:0, cost:1, eternal_compat:false (more...)}
+(6) Lua method 'inject_class' at Steamodded file 'src/game_object.lua:183' 
+	Local variables:
+	 self = table: 0x1d3685a0  {get_obj:function: 0x1da3c628, set:Center, subclasses:table: 0x1d6f9118, create_fake_card:function: 0x1d9a3258, __call:function: 0x1d9a12e8, delete:function: 0x1d9d80d8 (more...)}
+	 inject_time = number: 1.21e-05
+	 start_time = number: 11.0233
+	 end_time = number: 11.0233
+	 o = table: 0x1dcdab78  {_saved_d_u:true, original_key:Jack_of_all_jokers, mod:table: 0x1d596580, unlocked:true, registered:true, rarity:0, cost:1, eternal_compat:false (more...)}
+	 (for generator) = C function: builtin#6
+	 (for state) = table: 0x1d368578  {1:v_observatory, 2:b_zodiac, 3:b_painted, 4:b_anaglyph, 5:b_plasma, 6:b_erratic, 7:p_arcana_normal_1, 8:p_arcana_normal_2, 9:p_arcana_normal_3 (more...)}
+	 (for control) = number: 52
+	 i = number: 52
+	 key = string: "j_xmpl_Jack_of_all_jokers"
+(7) Lua field 'injectObjects' at Steamodded file 'src/game_object.lua:257' 
+	Local variables:
+	 class = table: 0x1d3685a0  {get_obj:function: 0x1da3c628, set:Center, subclasses:table: 0x1d6f9118, create_fake_card:function: 0x1d9a3258, __call:function: 0x1d9a12e8, delete:function: 0x1d9d80d8 (more...)}
+(8) Lua field 'injectObjects' at Steamodded file 'src/game_object.lua:259' 
+	Local variables:
+	 class = table: 0x1d9a6e38  {check_duplicate_register:function: 0x1dad7190, check_duplicate_key:function: 0x1da73f28, subclasses:table: 0x1d9a6e60, obj_list:function: 0x1d795928 (more...)}
+	 (for generator) = C function: builtin#6
+	 (for state) = table: 0x1d9a6e60  {1:table: 0x1d9ac020, 2:table: 0x1d9ac048, 3:table: 0x1d9eb6f8, 4:table: 0x1d9eb748, 5:table: 0x1d9d9378, 6:table: 0x1da5a1a0, 7:table: 0x1daa5de0 (more...)}
+	 (for control) = number: 10
+	 _ = number: 10
+	 subclass = table: 0x1d3685a0  {get_obj:function: 0x1da3c628, set:Center, subclasses:table: 0x1d6f9118, create_fake_card:function: 0x1d9a3258, __call:function: 0x1d9a12e8, delete:function: 0x1d9d80d8 (more...)}
+(9) Lua field 'injectItems' at Steamodded file 'src/loader.lua:608' 
+(10) Lua global 'initSteamodded' at Steamodded file 'src/loader.lua:661' 
+(11) Lua method 'start_up' at file 'game.lua:211'
+	Local variables:
+	 self = table: 0x1d492c18  {SPEEDFACTOR:1, F_GUIDE:false, keybind_mapping:table: 0x1d49dc18, F_CRASH_REPORTS:false, P_CARDS:table: 0x1d915ff0, shared_undiscovered_joker:table: 0x1d9a10f0 (more...)}
+	 settings = string: "return {[\"version\"]=\"1.0.1o-FULL\",[\"paused\"]=true,[\"QUEUED_CHANGE\"]={},[\"COMP\"]={[\"prev_name\"]=\"\",[\"name\"]=\"\",[\"score\"]=3398787,},[\"colourblind_option\"]=false,[\"play_button_pos\"]=2,[\"CUSTOM_DECK\"]={[\"Collabs\"]={[\"Spades\"]=\"default_Spades\",[\"Hearts\"]=\"default_Hearts\",[\"Diamonds\"]=\"default_Diamonds\",[\"Clubs\"]=\"default_Clubs\",},},[\"colour_palettes\"]={[\"Spades\"]=\"lc\",[\"Hearts\"]=\"lc\",[\"Diamonds\"]=\"lc\",[\"Clubs\"]=\"lc\",},[\"crashreports\"]=false,[\"tutorial_progress\"]={[\"hold_parts\"]={[\"first_hand_3\"]=true,[\"small_blind\"]=true,[\"big_blind\"]=true,[\"first_hand_4\"]=true,[\"second_hand\"]=true,[\"shop_1\"]=true,[\"first_hand_2\"]=true,[\"first_hand\"]=true,},[\"section\"]=\"second_hand\",[\"completed_parts\"]={[\"first_hand\"]=true,[\"first_hand_3\"]=true,[\"small_blind\"]=true,[\"big_blind\"]=true,[\"first_hand_4\"]=true,[\"shop_1\"]=true,[\"first_hand_section\"]=true,[\"first_hand_2\"]=true,[\"second_hand\"]=true,},},[\"language\"]=\"en-us\",[\"tutorial_complete\"]=true,[\"WINDOW\"]={[\"vsync\"]=1,[\"display_names\"]={[1]=\"1\",},[\"screenmode\"]=\"Windowed\",[\"DISPLAYS\"]={[1]={[\"screen_resolutions\"]={[\"strings\"]={[1]=\"-\",},[\"values\"]={[1]={[\"w\"]=1280,[\"h\"]=720,},},},[\"screen_res\"]={[\"w\"]=1536,[\"h\"]=864,},[\"DPI_scale\"]=1,[\"MONITOR_DIMS\"]={[\"height\"]=1080,[\"width\"]=1920,},},},[\"selected_display\"]=1,},[\"run_stake_stickers\"]=false,[\"GAMESPEED\"]=4,[\"SOUND\"]={[\"volume\"]=39.215093036825,[\"music_volume\"]=100,[\"game_sounds_volume\"]=100,},[\"music_control\"]={[\"current_track\"]=\"\",[\"desired_track\"]=\"\",[\"lerp\"]=1,},[\"ACHIEVEMENTS_EARNED\"]={[\"_10k\"]=true,[\"retrograde\"]=true,[\"heads_up\"]=true,[\"royale\"]=true,[\"ante_upper\"]=true,[\"_1000k\"]=true,[\"cartomancy\"]=true,[\"ante_up\"]=true,[\"card_player\"]=true,},[\"screenshake\"]=50,[\"current_setup\"]=\"New Run\",[\"profile\"]=1,[\"ambient_control\"]={[\"ambientFire1\"]={[\"per\"]=1.1,[\"vol\"]=0,},[\"ambientOrgan1\"]={[\"per\"]=0.7,[\"vol\"]=4.3531275983787e-43,},[\"ambientFire2\"]={[\"per\"]=1.05,[\"vol\"]=0,},[\"ambientFire3\"]={[\"per\"]=1,[\"vol\"]=8.0521393524751e-41,},},[\"DEMO\"]={[\"win_CTA_shown\"]=true,[\"quit_CTA_shown\"]=true,[\"timed_CTA_shown\"]=true,[\"total_uptime\"]=842.92367377274,},[\"GRAPHICS\"]={[\"texture_scaling\"]=2,[\"crt\"]=70,[\"shadows\"]=\"On\",[\"bloom\"]=1,},}"
+	 settings_ver = nil
+	 new_colour_proto = table: 0x1d49b138  {Spades:table: 0x1d49b3c0, Hearts:table: 0x1d49b230, Diamonds:table: 0x1d49b2e8, Clubs:table: 0x1d49b458}
+	 sound_files = table: 0x1d846d48  {1:ambientFire1.ogg, 2:ambientFire2.ogg, 3:ambientFire3.ogg, 4:ambientOrgan1.ogg, 5:button.ogg, 6:cancel.ogg, 7:card1.ogg, 8:card3.ogg, 9:cardFan2.ogg (more...)}
+	 shader_files = table: 0x1d84ac98  {1:CRT.fs, 2:background.fs, 3:booster.fs, 4:debuff.fs, 5:dissolve.fs, 6:flame.fs, 7:flash.fs, 8:foil.fs, 9:gold_seal.fs, 10:holo.fs, 11:hologram.fs (more...)}
+(12) Lua field 'load' at file 'main.lua:960'
+(13) Lua function '?' at file 'main.lua:907' (best guess)
+(14) global C function 'xpcall'
+(15) LÖVE function at file 'boot.lua:368' (best guess)
+	Local variables:
+	 result = boolean: true
+	 main = nil
+(16) global C function 'xpcall'
+(17) LÖVE function at file 'boot.lua:377' (best guess)
+	Local variables:
+	 func = Lua function '(LÖVE Function)' (defined at line 355 of chunk [love "boot.lua"])
+	 inerror = boolean: true
+	 deferErrhand = Lua function '(LÖVE Function)' (defined at line 348 of chunk [love "boot.lua"])
+	 earlyinit = Lua function '(LÖVE Function)' (defined at line 355 of chunk [love "boot.lua"])
+
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] 2025-09-13 14:34:39 :: INFO  :: StackTrace :: Additional Context:
+Balatro Version: 1.0.1o-FULL
+Modded Version: 1.0.0~BETA-0906c-STEAMODDED
+LÖVE Version: 11.5.0
+Lovely Version: 0.8.0
+Platform: Windows
+Steamodded Mods:
+    1: Simple by Gonçalo, Braz, Hernani [ID: SimpleJoker]
+Lovely Mods:
