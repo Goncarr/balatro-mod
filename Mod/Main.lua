@@ -1,7 +1,7 @@
 --- STEAMODDED HEADER
 --- MOD_NAME: Simple
 --- MOD_ID: SimpleJoker
---- MOD_AUTHOR: [Gonçalo,Braz,Hernani]
+--- MOD_AUTHOR: [Gon, Wolfy_Stacy, Richard_Nixon]
 --- MOD_DESCRIPTION: An example mod on how to create Jokers.
 --- PREFIX: xmpl
 ----------------------------------------------
@@ -9,14 +9,14 @@
 
 
 SMODS.Atlas{
-    key = 'Jokers', --atlas key
-    path = 'Jokers.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'Jokers', 
+    path = 'Jokers.png', 
+    px = 71, 
+    py = 95 
 }
 SMODS.Joker{
-    key = 'Simpleton', --joker key
-    loc_txt = { -- local text
+    key = 'Simpleton',
+    loc_txt = { 
         name = 'Simple',
         text = {
           'When Blind is selected,',
@@ -24,28 +24,25 @@ SMODS.Joker{
           '{X:mult,C:white}X#1#{} Mult',
           'Gain {C:money}123${} at end of round'
         },
-        --[[unlock = {
-            'Be {C:legendary}cool{}',
-        }]]
     },
-    atlas = 'Jokers', --atlas' key
-    rarity = 1, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
-    --soul_pos = { x = 0, y = 0 },
-    cost = 1, --cost
-    unlocked = true, --where it is unlocked or not: if true, 
-    discovered = true, --whether or not it starts discovered
-    blueprint_compat = true, --can it be blueprinted/brainstormed/other
-    eternal_compat = false, --can it be eternal
-    perishable_compat = false, --can it be perishable
-    pos = {x = 0, y = 0}, --position in atlas, starts at 0, scales by the atlas' card size (px and py): {x = 1, y = 0} would mean the sprite is 71 pixels to the right
+    atlas = 'Jokers',
+    rarity = 1,
+
+    cost = 1, 
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = false,
+    perishable_compat = false,
+    pos = {x = 0, y = 0},
     config = { 
       extra = {
-        Xmult = 100 --configurable value
+        Xmult = 100
       }
     },
     loc_vars = function(self,info_queue,center)
-        info_queue[#info_queue+1] = G.P_CENTERS.j_joker --adds "Joker"'s description next to this card's description
-        return {vars = {center.ability.extra.Xmult}} --#1# is replaced with card.ability.extra.Xmult
+        info_queue[#info_queue+1] = G.P_CENTERS.j_joker
+        return {vars = {center.ability.extra.Xmult}}
     end,
     check_for_unlock = function(self, args)
         if args.type == 'derek_loves_you' then --not a real type, just a joke
@@ -79,14 +76,14 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = 'jack_of_all_jokers', --atlas key
-    path = 'Unknown.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'jack_of_all_jokers',
+    path = 'Unknown.png',
+    px = 71,
+    py = 95
 }
 SMODS.Joker{
-    key = 'Jack_of_all_jokers', --joker key
-    loc_txt = { -- local text
+    key = 'Jack_of_all_jokers',
+    loc_txt = {
         name = 'Jack of All Jokers',
         text = {
           'When Blind is selected,',
@@ -94,42 +91,38 @@ SMODS.Joker{
           '{C:attention}1 in 6{} chance to destroy',
           'cards next to it',
         },
-        --[[unlock = {
-            'Be {C:legendary}cool{}',
-        }]]
+
     },
-    atlas = 'jack_of_all_jokers', --atlas' key
-    rarity = 1, --rarity: 1 = Common, 2 = Uncommon, 3 = Rare, 4 = Legendary
-    --soul_pos = { x = 0, y = 0 },
-    cost = 1, --cost
-    unlocked = true, --where it is unlocked or not: if true, 
-    discovered = true, --whether or not it starts discovered
-    blueprint_compat = true, --can it be blueprinted/brainstormed/other
-    eternal_compat = false, --can it be eternal
-    perishable_compat = false, --can it be perishable
-    pos = {x = 0, y = 0}, --position in atlas, starts at 0, scales by the atlas' card size (px and py): {x = 1, y = 0} would mean the sprite is 71 pixels to the right
+    atlas = 'jack_of_all_jokers',
+    rarity = 3, 
+
+    cost = 7,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = false,
+    perishable_compat = false,
+    pos = {x = 0, y = 0},
     config = { 
       extra = {
-        Xmult = 100 --configurable value
+        Xmult = 100
       }
     },
     calculate = function(self,card,context)
-        if context.setting_blind then
+        if context.main_eval and context.beat_boss then
             local current_jokers = #G.jokers.cards
-            local jokers_to_add = 2
+            local jokers_to_add = 1
             local jokers = {}
             if type(G.P_JOKERS) == "table" then
                 for key, joker in pairs(G.P_JOKERS) do
                     table.insert(jokers, key)
                 end
             end
-            if  G.jokers.config.card_limit >= current_jokers + 2 then
-                for i = 1, jokers_to_add do
+            if  G.jokers.config.card_limit >= current_jokers + jokers_to_add then
                     local random_key = jokers[math.random(#jokers)]
                     local new_card = create_card('Joker', G.jokers, nil,nil,nil,nil,random_key)
                     new_card:add_to_deck()
                     G.jokers:emplace(new_card)
-                end
             end
     end
 
@@ -202,7 +195,7 @@ SMODS.Sound{
 }
 
 SMODS.Atlas{
-    key = '21_kid', --atlas key
+    key = '21_kid',
     path = '21_kid.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
     px = 71, --width of one card
     py = 95 -- height of one card
@@ -255,3 +248,50 @@ calculate = function(self,card,context)
 end
 }
 
+
+SMODS.Atlas{
+    key = 'The gambler',
+    path = 'jokers.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = 'The gambler',
+    loc_txt = {
+        name = 'The gambler',
+        text = {
+            'When blind is selected,',
+            'Win or lose between {C:money}1 and 10${}'
+        }
+    },
+    atlas = 'The gambler',
+    rarity = 2,
+    cost = 7,
+    unlocked = true,
+    discovered = true,
+    
+
+    calculate = function(self,card,context)
+        if context.setting_blind then
+            local amount = math.random(0,10)
+            if math.random() < 9 then
+                return{
+                    card = card,
+                    dollars = -amount,
+                    message = '-$' .. amount,
+                    color = G.C.RED
+
+                }
+            else
+                return{
+                    card = card,
+                    dollars = amount,
+                    message = '+$' .. amount,
+                    color = G.C.MONEY
+
+                }
+            end
+        end
+    end
+}
