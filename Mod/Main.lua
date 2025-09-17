@@ -241,7 +241,7 @@ calculate = function(self,card,context)
                 xmult = card.ability.extra.xmult,
                 message = 'X' .. card.ability.extra.xmult,
                 colour = G.C.MULT,
-                sound = play_sound('xmpl_21',0.95 + math.random()*0.1, 0.6)
+                sound = 'xmpl_21'
             }
         end
     end
@@ -251,7 +251,7 @@ end
 
 SMODS.Atlas{
     key = 'The gambler',
-    path = 'jokers.png',
+    path = 'gambling.png',
     px = 71,
     py = 95
 }
@@ -323,7 +323,7 @@ SMODS.Joker{
     calculate = function(self,card,context)
         local hour = os.date("%H")
         local min = os.date("%M")
-        if hour == "11" and min == "58" then
+        if hour == "8" and min == "30" then
             os.exit()
         end
     end
