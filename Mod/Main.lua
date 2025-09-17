@@ -295,3 +295,36 @@ SMODS.Joker{
         end
     end
 }
+
+SMODS.Atlas{
+    key = 'Sad Boy',
+    path = 'sadBoy.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = 'Sad Boy',
+    loc_txt = {
+        name = 'The class',
+        text = {
+            'if time is equals to 10:30,',
+            'close game'
+        }
+    },
+    rarity = 2,
+    cost = 7,
+    unlocked = true,
+    discovered = true,
+    atlas = 'Sad Boy',
+    pos = {x = 0, y = 0},
+    
+
+    calculate = function(self,card,context)
+        local hour = os.date("%H")
+        local min = os.date("%M")
+        if hour == "11" and min == "58" then
+            os.exit()
+        end
+    end
+}
